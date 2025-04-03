@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microstrip Patch Antenna Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Microstrip Patch Antenna Calculator</h1>
+        <form id="antenna-form">
+            <label for="length">Length of Patch (mm):</label>
+            <input type="number" id="length" placeholder="Enter length" required>
+            <label for="width">Width of Patch (mm):</label>
+            <input type="number" id="width" placeholder="Enter width" required>
+            <label for="dielectric">Substrate Dielectric (ε<sub>r</sub>):</label>
+            <input type="number" step="0.1" id="dielectric" placeholder="Enter dielectric constant" required>
+            <label for="height">Substrate Height (mm):</label>
+            <input type="number" step="0.1" id="height" placeholder="Enter substrate height" required>
+            <label for="impedance">Input Impedance (Ω):</label>
+            <input type="number" id="impedance" value="50" placeholder="Enter impedance" required>
+            <label for="material">Patch Material:</label>
+            <select id="material" required>
+                <option value="copper">Copper</option>
+                <option value="gold">Gold</option>
+            </select>
+            <button type="button" onclick="calculateAntenna()">Calculate</button>
+        </form>
+        <div id="results"></div>
+        <canvas id="s11Chart"></canvas>
+    </div>
+    <script src="antenna.js"></script>
+</body>
+</html>
